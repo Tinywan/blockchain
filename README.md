@@ -12,8 +12,8 @@ $ go get -u github.com/Tinywan/blockchain
 // 进入目录
 cd github.com/Tinywan/blockchain
 
-// 命令行运行 main.go 文件
-github.com\Tinywan\blockchain> go run .\cmd\main.go
+// Windows环境：go run .\cmd\main.go
+github.com\Tinywan\blockchain> go run cmd/main.go
 Index: 0
 PrevBlockHash:
 CurrHash: 0d8845eb2da42f75aef4ee920f644975d73347e0331d17b37209c4f32ef4867f
@@ -41,8 +41,8 @@ Timestamp: 1531236284
 // 进入目录
 cd github.com/Tinywan/blockchain
 
-// 开启http服务监听
-go run .\rpc\Server.go
+// 开启http服务监听，Windows环境：go run .\rpc\Server.go 
+go run rpc/Server.go
 ```
 
 #### 2、创建创始区块 
