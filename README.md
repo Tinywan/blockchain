@@ -1,13 +1,18 @@
 # 用GO语言构建自己的区块链
 
-#### 步骤
-* 创建 block
-* 创建 blackchin
-* 创建 http server 
-
-#### 通过命令行执行
+## 安装
 
 ```golang
+$ go get -u github.com/Tinywan/blockchain
+```
+
+## 通过命令行执行
+
+```golang
+// 进入目录
+cd github.com/Tinywan/blockchain
+
+// 命令行运行 main.go 文件
 github.com\Tinywan\blockchain> go run .\cmd\main.go
 Index: 0
 PrevBlockHash:
@@ -29,15 +34,20 @@ Timestamp: 1531236284
 
 ```
 
-#### 通过RPC 接口访问数据
+## 通过RPC 接口访问数据
 
-1、命令启动http服务 
+#### 1、命令启动http服务 
 ```
+// 进入目录
+cd github.com/Tinywan/blockchain
+
+// 开启http服务监听
 go run .\rpc\Server.go
 ```
 
-2、浏览器地址：`http://localhost:8888/blockchain/get`  
+#### 2、创建创始区块 
 
+URL地址：`http://localhost:8888/blockchain/get`
 ```json
 {
     "Blocks": [
@@ -52,7 +62,7 @@ go run .\rpc\Server.go
 }
 ```
 
-3、写入区块链: `http://localhost:8888/blockchain/write?data=Send 1 Tinywan to Tinyaiai`
+#### 3、写入区块链: `http://localhost:8888/blockchain/write?data=Send 1 Tinywan to Tinyaiai`
 
 ```json
 {
@@ -82,15 +92,7 @@ go run .\rpc\Server.go
 }
 ```
 
-## []byte与16进制(String)之间的转换
-* []byte -> String
-
-    ```golang
-    str := "hello"
-    // []byte和string相互转换 ,把字符串转换为字节数组
-    src := []byte(str)
-    // []byte和string相互转换
-    encodedStr := hex.EncodeToString(src)
-    // 注意"Hello"与"encodedStr"不相等，encodedStr是用字符串来表示16进制
-    ```
-*  浮点数
+## 步骤
+#### 创建 block
+#### 创建 blackchin
+#### 创建 http server 
