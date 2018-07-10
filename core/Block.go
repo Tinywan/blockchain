@@ -32,7 +32,7 @@ func GenerateNewBlock(prevBlock Block,data string) Block {
 	return newBlock
 }
 
-// 创始区块，不依赖下一个区块
+// 创始区块，不依赖下一个区块,上级区块为空
 func GenerateGenesisBlock() Block{
 	prevBlock := Block{}
 	prevBlock.Index = -1

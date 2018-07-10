@@ -8,7 +8,7 @@ import "github.com/Tinywan/blockchain/core"
 // 	hashInBytes := sha256.Sum256([]byte(toBeHashed))
 // 	// 把[]byte表示成16进制（用String的形式）
 // 	hashInString := hex.EncodeToString(hashInBytes[:])
-// 	// 打印日志
+// 	// 打印log日志
 // 	log.Printf("%s,%s",toBeHashed,hashInString)
 // 	return hashInString
 // }
