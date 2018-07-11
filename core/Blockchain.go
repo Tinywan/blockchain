@@ -10,13 +10,13 @@ type Blockchain struct {
 }
 
 func NewBlockchain() *Blockchain {
-	genesisBlock := GenerateGenesisBlock()
+	genesisBlock := GenerateGenesisBlock() // 创建初始区块
 	blockchain := Blockchain{}
 	blockchain.AppendBlock(&genesisBlock)
 	return &blockchain
 } 
 
-func (bc *Blockchain)SendData(data string) {
+func (bc *Blockchain) SendData(data string) {
 	preBlock := bc.Blocks[len(bc.Blocks) - 1]
 	nextBlock := GenerateNewBlock(*preBlock ,data)
 	bc.AppendBlock(&nextBlock)
@@ -61,5 +61,6 @@ func isValid(newBlock Block,oldBlock Block) bool {
 	// if calculateHash(newBlock) != newBlock.Hash {
 	// 	return false
 	// }
+
 	return true
 }

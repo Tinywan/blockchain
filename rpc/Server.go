@@ -12,7 +12,7 @@ var blockchain *core.Blockchain
 func run(){
 	http.HandleFunc("/blockchain/get",blockchainGetHanle)
 	http.HandleFunc("/blockchain/write",blockchainWriteHanle)
-	// 开始监听端口
+	// 开始监http听端口
 	http.ListenAndServe("localhost:8888",nil)
 }
 
