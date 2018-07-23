@@ -1,7 +1,7 @@
 ## 安装
 
 ```golang
-$ go get -u github.com/Tinywan/blockchain
+$ go get -u github.com/Tinywan/blockchain/cmd
 ```
 
 ## 通过命令行执行
