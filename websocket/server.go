@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/websocket"
 	"log"
 	"net/http"
+	"flag"
 )
 
 var (
@@ -51,11 +52,14 @@ ERR:
 	conn.Close()
 }
 
+var addr = flag.String("addr", ":8888", "http service address")
 func main() {
 	// http://127.0.0.1:8888/ws
 	fmt.Println("websocket is start ...")
 	http.HandleFunc("/ws", wsHandler)
-	if err := http.ListenAndServe(":8888", nil); err != nil {
-		log.Fatal("ListenAndServe:", err)
+
+	err := http.ListenAndServe(*addr, nil)
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
 	}
 }

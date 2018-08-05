@@ -1,12 +1,12 @@
 ## 安装
 
-####　区块链
+### 区块链
 
 ```golang
 $ go get -u github.com/Tinywan/blockchain/cmd
 ```
 
-#### Websocket
+### Websocket
 
 ```golang
 $ go get -u github.com/Tinywan/blockchain/websocket
