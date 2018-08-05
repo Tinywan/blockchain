@@ -1,0 +1,31 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+    var sock = null;
+    var wsuri = "ws://127.0.0.1:8888/ws";
+    window.onload = function() {
+        console.log("onload");
+        sock = new WebSocket(wsuri);
+        sock.onopen = function() {
+            console.log("connected to " + wsuri);
+        };
+        sock.onclose = function(e) {
+            console.log("connection closed (" + e.code + ")");
+        };
+        sock.onmessage = function(e) {
+            console.log("message received: " + e.data);
+        };
+    };
+    function send() {
+        var msg = document.getElementById('message').value;
+        sock.send(msg);
+    }
+</script>
+<h1>GO实现WebSocket消息推送服务</h1>
+<form>
+    <p>Message: <input id="message" type="text" value="Hello, world!"></p>
+</form>
+<button onclick="send();">Send Message</button>
+</body>
+</html>
